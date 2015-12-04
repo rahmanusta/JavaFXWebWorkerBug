@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div>Hello, I will crash after seconds, just wait</div>
+<script>
+    setTimeout(function () {
+        var myWorker = new Worker("http://asciidocfx.com/webworker.js");
+        myWorker.onmessage = function (e) {
+            var data = e.data;
+            app.processData(data);
+        }
+
+        myWorker.postMessage({name: "Rahman Usta"});
+        myWorker.postMessage({name: "Rahman Usta"});
+    }, 3000);
+</script>
+</body>
+</html>
